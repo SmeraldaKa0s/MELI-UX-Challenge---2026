@@ -1,0 +1,73 @@
+.top-app-bar {
+  background-color: var(--color-surface);
+  width: 100%;
+}
+
+.top-app-bar--play {
+  background-color: var(--color-surface-play);
+}
+
+.top-app-bar__row {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 var(--space-4);
+}
+
+.top-app-bar__leading {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.top-app-bar__title {
+  flex: 1 1 auto;
+  text-align: center;
+  font-size: var(--text-h3-size);
+  font-weight: var(--text-h3-weight);
+  line-height: var(--text-h3-line-height);
+  color: var(--color-on-surface);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 var(--space-2);
+}
+
+.top-app-bar--play .top-app-bar__title {
+  color: var(--color-white);
+}
+
+.top-app-bar__trailing {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+/* When there's no title, leading and trailing still stay at opposite ends */
+.top-app-bar__leading:only-child,
+.top-app-bar__trailing:last-child:not(:nth-child(3)) {
+  margin-left: auto;
+}
+
+.top-app-bar__address {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0 var(--space-4) var(--space-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-on-surface-secondary);
+  font-family: var(--font-family-base);
+}
+
+.top-app-bar--play .top-app-bar__address {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.top-app-bar__address-text {
+  font-size: var(--text-label-size);
+  font-weight: var(--text-label-weight);
+  line-height: var(--text-label-line-height);
+}

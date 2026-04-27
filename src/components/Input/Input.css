@@ -1,0 +1,91 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  width: 380px;
+}
+
+.input__label {
+  font-family: var(--font-family-base);
+  font-size: var(--text-label-size);
+  font-weight: var(--text-label-weight);
+  line-height: var(--text-label-line-height);
+  color: var(--color-on-surface);
+}
+
+.input__field {
+  height: 48px;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-surface);
+  border: var(--border-width-default) solid var(--border-color-default);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-base);
+  font-size: var(--text-body-lg-size);
+  font-weight: var(--text-body-lg-weight);
+  line-height: var(--text-body-lg-line-height);
+  color: var(--color-on-surface);
+  outline: none;
+  transition: border-color var(--duration-base) var(--ease-standard),
+    box-shadow var(--duration-base) var(--ease-standard);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.input__field::placeholder {
+  color: var(--color-on-surface-disabled);
+}
+
+.input__field:hover:not(:disabled) {
+  border-color: var(--color-outline-strong);
+}
+
+/* inset box-shadow avoids layout shift on focus */
+.input__field:focus {
+  border-color: var(--border-color-focus);
+  box-shadow: inset 0 0 0 1px var(--border-color-focus);
+}
+
+.input__helper {
+  font-family: var(--font-family-base);
+  font-size: var(--text-caption-size);
+  font-weight: var(--text-caption-weight);
+  line-height: var(--text-caption-line-height);
+  color: var(--color-on-surface-secondary);
+}
+
+/* Error state */
+
+.input--error .input__label {
+  color: var(--color-error);
+}
+
+.input--error .input__field {
+  border-color: var(--border-color-error);
+  box-shadow: inset 0 0 0 1px var(--border-color-error);
+}
+
+.input--error .input__field:focus {
+  border-color: var(--border-color-error);
+  box-shadow: inset 0 0 0 1px var(--border-color-error);
+}
+
+.input--error .input__helper {
+  color: var(--color-error);
+}
+
+/* Disabled state */
+
+.input--disabled .input__label {
+  color: var(--color-on-surface-disabled);
+}
+
+.input--disabled .input__field {
+  background-color: var(--color-surface-variant);
+  border-color: var(--border-color-default);
+  color: var(--color-on-surface-disabled);
+  cursor: not-allowed;
+}
+
+.input--disabled .input__field::placeholder {
+  color: var(--color-on-surface-disabled);
+}

@@ -1,0 +1,73 @@
+.bottom-nav {
+  display: flex;
+  align-items: stretch;
+  height: 57px;
+  background-color: var(--color-surface);
+  border-top: var(--border-width-default) solid var(--color-outline);
+  width: 100%;
+}
+
+.bottom-nav__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-on-surface-disabled);
+  transition: color var(--duration-fast) var(--ease-standard);
+  min-width: 0;
+}
+
+.bottom-nav__item:focus-visible {
+  outline: var(--border-width-focus) solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+.bottom-nav__item--active {
+  color: var(--color-accent);
+}
+
+.bottom-nav__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.bottom-nav__label {
+  font-family: var(--font-family-base);
+  font-size: var(--text-caption-size);
+  font-weight: var(--text-caption-weight);
+  line-height: var(--text-caption-line-height);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Placeholder slots rendered when no items are provided */
+
+.bottom-nav__item--placeholder {
+  pointer-events: none;
+}
+
+.bottom-nav__icon--placeholder {
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-outline);
+  border-radius: var(--radius-sm);
+}
+
+.bottom-nav__label--placeholder {
+  width: 32px;
+  height: 10px;
+  background-color: var(--color-outline);
+  border-radius: var(--radius-sm);
+}

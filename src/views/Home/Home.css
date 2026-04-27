@@ -1,0 +1,391 @@
+.home {
+  width: 412px;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 910px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-base);
+  color: var(--color-on-surface);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.home__main {
+  overflow-y: auto;
+}
+
+/* ─────────────────────── Header (yellow zone) ─────────────────────── */
+
+.home__header {
+  background: var(--color-primary);
+  padding: var(--space-3) var(--space-4) var(--space-2);
+}
+
+.home__header-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 40px;
+}
+
+.home__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--color-white);
+  color: var(--color-on-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+}
+
+.home__search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  background: var(--color-white);
+  border-radius: var(--radius-full);
+  padding: 0 var(--space-1) 0 var(--space-3);
+  min-width: 0;
+}
+
+.home__search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family-base);
+  font-size: var(--text-body-size);
+  font-weight: var(--text-body-weight);
+  color: var(--color-on-surface);
+  min-width: 0;
+}
+
+.home__search-input::placeholder {
+  color: var(--color-on-surface-secondary);
+}
+
+.home__search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.home__search-camera {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  color: var(--color-on-surface);
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.home__bell {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  color: var(--color-on-surface);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.home__bell-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  background: var(--color-error);
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.home__address {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  padding: 4px 0 0;
+  cursor: pointer;
+  color: var(--color-on-surface);
+  font-family: var(--font-family-base);
+}
+
+.home__address-text {
+  font-size: var(--text-label-size);
+  font-weight: 600;
+}
+
+/* ─────────────────────── Category tabs (override) ─────────────────────── */
+
+.home__tabs {
+  background: var(--color-primary);
+  padding: var(--space-2) var(--space-4) 0;
+  height: 40px;
+  gap: var(--space-4);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.home__tabs .tab-bar__tab {
+  background: transparent;
+  border-radius: 0;
+  padding: 0 0 6px;
+  height: 32px;
+  color: var(--color-on-surface);
+  font-weight: 500;
+}
+
+.home__tabs .tab-bar__tab--active {
+  background: transparent;
+  color: var(--color-on-surface);
+  font-weight: 700;
+  border-bottom: 3px solid var(--color-on-surface);
+}
+
+/* ─────────────────────── Main scroll area ─────────────────────── */
+
+.home__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-surface);
+}
+
+.home__main > * {
+  flex-shrink: 0;
+}
+
+/* ─────────────────────── Hero promo banner (image) ─────────────────────── */
+
+.home__promo {
+  display: block;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.home__promo-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ─────────────────────── meli+ banner (image) ─────────────────────── */
+
+.home__meli-plus {
+  display: block;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.home__meli-plus-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ─────────────────────── Quick links row ─────────────────────── */
+
+.home__quick-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+}
+
+.home__quick-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: var(--space-2) var(--space-1);
+  cursor: pointer;
+  font-family: var(--font-family-base);
+  border-radius: var(--radius-md);
+  transition: background-color 120ms ease, transform 120ms ease;
+}
+
+.home__quick-link:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.home__quick-link:active {
+  background-color: rgba(0, 0, 0, 0.08);
+  transform: scale(0.96);
+}
+
+.home__quick-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.home__quick-link-icon {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  display: block;
+}
+
+.home__quick-tag-spacer {
+  height: 24px;
+}
+
+.home__quick-link-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-on-surface);
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* ─────────────────────── Product grid ─────────────────────── */
+
+.home__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 0 calc(-1 * var(--space-4));
+  border-top: 1px solid var(--color-outline);
+}
+
+.home__product {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  border-right: 1px solid var(--color-outline);
+  border-bottom: 1px solid var(--color-outline);
+}
+
+.home__product:nth-child(2n) {
+  border-right: none;
+}
+
+.home__product-image {
+  position: relative;
+  aspect-ratio: 1;
+  background: var(--color-white);
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-2);
+  overflow: hidden;
+}
+
+.home__product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.home__product-title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--color-on-surface);
+}
+
+.home__product-old-price {
+  font-size: 11px;
+  color: var(--color-on-surface-secondary);
+  text-decoration: line-through;
+}
+
+.home__product-price-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.home__product-price {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  letter-spacing: -0.3px;
+}
+
+
+.home__product-shipping {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-success);
+}
+
+/* ─────────────────────── Placeholder marker ─────────────────────── */
+
+.home__placeholder-tag {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.45);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-family: var(--font-family-base);
+}
+
+/* ─────────────────────── Bottom nav (override + cart FAB) ─────────────────────── */
+
+.home__bottom-nav {
+  position: sticky;
+  bottom: 0;
+  height: 64px;
+  padding-top: 4px;
+  overflow: visible;
+}
+
+.home__bottom-nav .bottom-nav__item {
+  overflow: visible;
+}
+
+.home__cart-fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-accent);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.10);
+  border: 1px solid var(--color-grey-100);
+  transform: translateY(-16px);
+  flex-shrink: 0;
+}

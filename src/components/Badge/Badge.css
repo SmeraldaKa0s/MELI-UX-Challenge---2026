@@ -1,0 +1,83 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  white-space: nowrap;
+}
+
+/* ── discount ── */
+.badge--discount {
+  background-color: var(--color-success);
+  color: var(--color-white);
+  font-family: 'Inter', var(--font-family-base);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  border-radius: var(--radius-sm);
+  padding: 3px 5px;
+  justify-content: center;
+}
+
+/* ── status ── */
+.badge--status {
+  background-color: transparent;
+  font-size: var(--text-label-size);
+  font-weight: var(--text-label-weight);
+  line-height: var(--text-label-line-height);
+  color: var(--color-on-surface-secondary);
+}
+
+.badge__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.badge--status-pending .badge__dot {
+  background-color: var(--color-pending);
+}
+
+.badge--status-success .badge__dot {
+  background-color: var(--color-success);
+}
+
+.badge--status-error .badge__dot {
+  background-color: var(--color-error);
+}
+
+/* ── pill ── */
+.badge--pill {
+  background-color: var(--color-grey-100);
+  color: var(--color-grey-900);
+  font-family: 'Inter', var(--font-family-base);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 143%;
+  border-radius: var(--radius-lg);
+  padding: 2px var(--space-2);
+  justify-content: center;
+}
+
+/* tone modifiers (only for pill variant) */
+.badge--pill.badge--tone-info {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.badge--pill.badge--tone-success {
+  background-color: var(--color-success);
+  color: var(--color-white);
+}
+
+.badge--pill.badge--tone-error {
+  background-color: var(--color-error);
+  color: var(--color-white);
+}
+
+.badge--pill.badge--tone-warning {
+  background-color: var(--color-pending);
+  color: var(--color-on-surface);
+}
